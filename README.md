@@ -1,15 +1,27 @@
-# Airbnb JavaScript Style Guide() {
+# ZE adapted Airbnb JavaScript Style Guide() {
 
 *A mostly reasonable approach to JavaScript*
 
-[![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb.svg)](https://www.npmjs.com/package/eslint-config-airbnb)
-[![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb-base.svg)](https://www.npmjs.com/package/eslint-config-airbnb-base)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+## Original style guide
+The original style guide can be found [here](https://github.com/airbnb/javascript)
+We refer to this version: https://github.com/airbnb/javascript/blob/788208295469e19b806c06e01095dc8ba1b6cdc9/README.md
 
 ## Adapted rules compared to Airbnb original
 [18.1](#whitespace--spaces)
 
 **NOTE** All examples match the airbnb style guide concerning the indentation and are not adapted to our change!
+
+## Deactivated rules
+[10.1](#modules--use-them)
+[10.2](#modules--no-wildcard)
+[10.3](#modules--no-export-from-import)
+[10.4](#modules--no-duplicate-imports)
+[10.5](#modules--no-mutable-exports)
+[10.6](#modules--prefer-default-export)
+[10.7](#modules--imports-first)
+[10.8](#modules--multiline-imports-over-newlinesliterals.</del>)
+[10.9](#modules--no-webpack-loader-syntax)
+
 
 ## Table of Contents
 
@@ -37,6 +49,7 @@
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Events](#events)
+  1. [ZE Custom Rules] (#ze-custom-rules)
   1. [jQuery](#jquery)
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
@@ -44,9 +57,6 @@
   1. [Performance](#performance)
   1. [Resources](#resources)
   1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
-  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
-  1. [Chat With Us About JavaScript](#chat-with-us-about-javascript)
   1. [Contributors](#contributors)
   1. [License](#license)
 
@@ -1146,12 +1156,12 @@
   - [10.2](#modules--no-wildcard) **ZE-DEACTIVATED** <del>Do not use wildcard imports.</del>
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
-  - [10.3](#modules--no-export-from-import) **ZE-DEACTIVATED** <del>And do not export directly from an import.</del>    
+  - [10.3](#modules--no-export-from-import) **ZE-DEACTIVATED** <del>And do not export directly from an import.</del>
 
   <a name="modules--no-duplicate-imports"></a>
   - [10.4](#modules--no-duplicate-imports) **ZE-DEACTIVATED** <del>Only import from a path in one place.</del>
  eslint: [`no-duplicate-imports`](http://eslint.org/docs/rules/no-duplicate-imports)
-    
+
   <a name="modules--no-mutable-exports"></a>
   - [10.5](#modules--no-mutable-exports) **ZE-DEACTIVATED** <del>Do not export mutable bindings.</del>
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
@@ -1163,13 +1173,13 @@
   <a name="modules--imports-first"></a>
   - [10.7](#modules--imports-first) **ZE-DEACTIVATED** <del>Put all `import`s above non-import statements.</del>
  eslint: [`import/imports-first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md)
-    
+
   <a name="modules--multiline-imports-over-newlines"></a>
   - [10.8](#modules--multiline-imports-over-newlines) **ZE-DEACTIVATED** <del>Multiline imports should be indented just like multiline array and object literals.</del>
 
   <a name="modules--no-webpack-loader-syntax"></a>
   - [10.9](#modules--no-webpack-loader-syntax) **ZE-DEACTIVATED** <del>Disallow Webpack loader syntax in module import statements.</del>
- eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)    
+ eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2540,18 +2550,30 @@
     ```
 
   <a name="naming--leading-underscore"></a><a name="22.4"></a>
-  - [22.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
-
-    > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won't count as breaking, or that tests aren't needed. tl;dr: if you want something to be “private”, it must not be observably present.
+  - [22.4](#naming--leading-underscore) **ZE-ADAPTED** Use 1 leading underscore for private members and methods.
 
     ```javascript
     // bad
     this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
+    this.__firstName = 'Panda';
+    this._firstName_ = 'Panda';
+
+    // bad
+    class App {
+      __myPrivate__() {
+        // ..
+      }
+    }
+
+    // good
     this._firstName = 'Panda';
 
     // good
-    this.firstName = 'Panda';
+        class App {
+          _myPrivate() {
+            // ..
+          }
+        }
     ```
 
   <a name="naming--self-this"></a><a name="22.5"></a>
@@ -2745,7 +2767,6 @@
 
   **[⬆ back to top](#table-of-contents)**
 
-
 ## jQuery
 
   <a name="jquery--dollar-prefix"></a><a name="25.1"></a>
@@ -2872,6 +2893,101 @@
 
 **[⬆ back to top](#table-of-contents)**
 
+## ZE custom rules
+  <a name="custom-curly-brackets"></a><a name="29.1"></a>
+  - [29.1](#custom-curly-brackets) Always start your curly braces on the same line as whatever they're opening.
+
+    > Why? Because of implicit semicolon insertion and unexpected behaviour otherwise.
+
+    ```javascript
+    // bad
+    if (true)
+    {
+      count += 1;
+    }
+
+    // good
+    if (true) {
+      count += 1;
+    }
+    ```
+
+  <a name="custom-strict-mode"></a><a name="29.2"></a>
+  - [29.2](#custom-strict-mode) Always use strict mode.
+
+    > Why? This eliminates some silent javascript error by changing them to throw errors and it allows better runtime optimization.
+    For more info read this [article](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Strict_mode).
+
+    ```javascript
+    // good
+    "use strict";
+    ```
+
+  <a name="custom-function-length"></a><a name="29.3"></a>
+  - [29.3](#custom-function-length) Avoid function length > 50.
+
+    > Why? Most of the time you can extract the functionality into a separate function to achieve separation of concerns.
+
+  <a name="custom-return-count"></a><a name="29.4"></a>
+  - [29.4](#custom-return-count) Avoid having more than one return statement in one function. The only exception is to use
+    return statements in the argument checking process.
+
+    > Why? This is often a source of errors when you have allocated resources in a function and forget to release them before you return in various places.
+
+      ```javascript
+      // bad - complicated to read and error prone
+      function findItemInFile(regEx, fileName) {
+          const fileHandle = openFile(fileName);
+          if (!fileHandle) {
+              return false;
+          }
+          const content = readTextFile(fileHandle);
+          if (-1 === content.search(regEx)) {
+              return false;
+          } else {
+              closeFile(fileName);
+              return true;
+          }
+      }
+
+      // good - one defined exit path
+      function findItemInFile(regEx, fileName) {
+          let result = false;
+          const fileHandle = openFile(fileName);
+
+          if (fileHandle) {
+              const content = readTextFile(fileHandle);
+              if (-1 !== content.search(regEx)) {
+                  result = true;
+              }
+          }
+          closeFile(fileName);
+
+          return result;
+      }
+
+      // good - return in argument checking is allowed
+      function findItemInFile(regEx, fileName) {
+          if (!regEx) return false;
+          if (!fileName) return false;
+
+          let result = false;
+          const fileHandle = openFile(fileName);
+
+          if (fileHandle) {
+              const content = readTextFile(fileHandle);
+              if (-1 !== content.search(regEx)) {
+                  result = true;
+              }
+          }
+          closeFile(fileName);
+
+          return result;
+      }
+      ```
+
+**[⬆ back to top](#table-of-contents)**
+
 
 ## Performance
 
@@ -2886,6 +3002,8 @@
   - Loading...
 
 **[⬆ back to top](#table-of-contents)**
+
+
 
 
 ## Resources
@@ -3052,33 +3170,6 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-## Translation
-
-  This style guide is also available in other languages:
-
-  - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
-  - ![bg](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png) **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
-  - ![ca](https://raw.githubusercontent.com/fpmweb/javascript-style-guide/master/img/catala.png) **Catalan**: [fpmweb/javascript-style-guide](https://github.com/fpmweb/javascript-style-guide)
-  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [sivan/javascript-style-guide](https://github.com/sivan/javascript-style-guide)
-  - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Chinese (Traditional)**: [jigsawye/javascript](https://github.com/jigsawye/javascript)
-  - ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **French**: [nmussy/javascript-style-guide](https://github.com/nmussy/javascript-style-guide)
-  - ![de](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png) **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
-  - ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**: [sinkswim/javascript-style-guide](https://github.com/sinkswim/javascript-style-guide)
-  - ![jp](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide)
-  - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [tipjs/javascript-style-guide](https://github.com/tipjs/javascript-style-guide)
-  - ![pl](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png) **Polish**: [mjurczyk/javascript](https://github.com/mjurczyk/javascript)
-  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [uprock/javascript](https://github.com/uprock/javascript)
-  - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
-  - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide)
-  - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [giangpii/javascript-style-guide](https://github.com/giangpii/javascript-style-guide)
-
-## The JavaScript Style Guide Guide
-
-  - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
-
-## Chat With Us About JavaScript
-
-  - Find us on [gitter](https://gitter.im/airbnb/javascript).
 
 ## Contributors
 
