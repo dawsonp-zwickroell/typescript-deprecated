@@ -6,8 +6,10 @@
 The original style guide can be found [here](https://github.com/airbnb/javascript)
 We refer to this version: https://github.com/airbnb/javascript/blob/788208295469e19b806c06e01095dc8ba1b6cdc9/README.md
 
-## Adapted rules compared to Airbnb original
+## Adapted/extended rules compared to Airbnb original
 [18.1](#whitespace--spaces)
+[22.2](#naming--camelCase)
+[22.4](#naming--leading-underscore)
 
 **NOTE** All examples match the airbnb style guide concerning the indentation and are not adapted to our change!
 
