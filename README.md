@@ -2511,17 +2511,19 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```
 
   <a name="naming--camelCase"></a><a name="22.2"></a>
-  - [22.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
+  - [22.2](#naming--camelCase) **ZE-ADAPTED** Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](http://eslint.org/docs/rules/camelcase.html) jscs: [`requireCamelCaseOrUpperCaseIdentifiers`](http://jscs.info/rule/requireCamelCaseOrUpperCaseIdentifiers)
 
     ```javascript
     // bad
     const OBJEcttsssss = {};
     const this_is_my_object = {};
     function c() {}
+    function getXMLString() {}
 
     // good
     const thisIsMyObject = {};
     function thisIsMyFunction() {}
+    function getXmlString() {}
     ```
 
   <a name="naming--PascalCase"></a><a name="22.3"></a>
