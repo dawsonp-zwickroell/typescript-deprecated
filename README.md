@@ -14,6 +14,10 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 **NOTE** All examples match the airbnb style guide concerning the indentation and are not adapted to our change!
 
 ## Deactivated rules
+[5.1](##destructuring--object)
+[5.2](#destructuring--array)
+[5.3](#destructuring--object-over-array)
+
 [10.1](#modules--use-them)
 [10.2](#modules--no-wildcard)
 [10.3](#modules--no-export-from-import)
@@ -430,7 +434,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 ## Destructuring
 
   <a name="destructuring--object"></a><a name="5.1"></a>
-  - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
+  - [5.1](#destructuring--object) **ZE-DEACTIVATED** <del>Use object destructuring when accessing and using multiple properties of an object.</del> jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
 
     > Why? Destructuring saves you from creating temporary references for those properties.
 
@@ -456,7 +460,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```
 
   <a name="destructuring--array"></a><a name="5.2"></a>
-  - [5.2](#destructuring--array) Use array destructuring. jscs: [`requireArrayDestructuring`](http://jscs.info/rule/requireArrayDestructuring)
+  - [5.2](#destructuring--array) **ZE-DEACTIVATED** <del>Use array destructuring.</del> jscs: [`requireArrayDestructuring`](http://jscs.info/rule/requireArrayDestructuring)
 
     ```javascript
     const arr = [1, 2, 3, 4];
@@ -470,7 +474,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```
 
   <a name="destructuring--object-over-array"></a><a name="5.3"></a>
-  - [5.3](#destructuring--object-over-array) Use object destructuring for multiple return values, not array destructuring. jscs: [`disallowArrayDestructuringReturn`](http://jscs.info/rule/disallowArrayDestructuringReturn)
+  - [5.3](#destructuring--object-over-array) **ZE-DEACTIVATED** <del>Use object destructuring for multiple return values, not array destructuring.</del> jscs: [`disallowArrayDestructuringReturn`](http://jscs.info/rule/disallowArrayDestructuringReturn)
 
     > Why? You can add new properties over time or change the order of things without breaking call sites.
 
