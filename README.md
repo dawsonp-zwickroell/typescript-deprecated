@@ -8,6 +8,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
 ## Adapted/extended rules compared to Airbnb original
 [6.1](#strings--quotes)
+[7.1](#functions--declarations)
 [18.1](#whitespace--spaces)
 [22.2](#naming--camelCase)
 [22.4](#naming--leading-underscore)
@@ -603,7 +604,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     }
 
     // good
-    const foo = function bar() {
+    const foo = function foo() {
     };
     ```
 
