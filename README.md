@@ -183,15 +183,15 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     // bad
     const obj = {
       id: 5,
-      name: 'San Francisco',
+      name: "San Francisco",
     };
-    obj[getKey('enabled')] = true;
+    obj[getKey("enabled")] = true;
 
     // good
     const obj = {
       id: 5,
-      name: 'San Francisco',
-      [getKey('enabled')]: true,
+      name: "San Francisco",
+      [getKey("enabled")]: true,
     };
     ```
 
@@ -224,7 +224,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     > Why? It is shorter to write and descriptive.
 
     ```javascript
-    const lukeSkywalker = 'Luke Skywalker';
+    const lukeSkywalker = "Luke Skywalker";
 
     // bad
     const obj = {
@@ -243,8 +243,8 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     > Why? It's easier to tell which properties are using the shorthand.
 
     ```javascript
-    const anakinSkywalker = 'Anakin Skywalker';
-    const lukeSkywalker = 'Luke Skywalker';
+    const anakinSkywalker = "Anakin Skywalker";
+    const lukeSkywalker = "Luke Skywalker";
 
     // bad
     const obj = {
@@ -275,16 +275,16 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
   ```javascript
   // bad
   const bad = {
-    'foo': 3,
-    'bar': 4,
-    'data-blah': 5,
+    "foo": 3,
+    "bar": 4,
+    "data-blah": 5,
   };
 
   // good
   const good = {
     foo: 3,
     bar: 4,
-    'data-blah': 5,
+    "data-blah": 5,
   };
   ```
 
@@ -303,7 +303,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
   // best
   const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
   /* or */
-  import has from 'has';
+  import has from "has";
   …
   console.log(has.call(object, key));
   ```
@@ -350,10 +350,10 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     const someStack = [];
 
     // bad
-    someStack[someStack.length] = 'abracadabra';
+    someStack[someStack.length] = "abracadabra";
 
     // good
-    someStack.push('abracadabra');
+    someStack.push("abracadabra");
     ```
 
   <a name="es6-array-spreads"></a><a name="4.3"></a>
@@ -377,7 +377,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
   - [4.4](#arrays--from) To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
     ```javascript
-    const foo = document.querySelectorAll('.foo');
+    const foo = document.querySelectorAll(".foo");
     const nodes = Array.from(foo);
     ```
 
@@ -412,8 +412,8 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     // bad
     inbox.filter((msg) => {
       const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
+      if (subject === "Mockingbird") {
+        return author === "Harper Lee";
       } else {
         return false;
       }
@@ -422,8 +422,8 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     // good
     inbox.filter((msg) => {
       const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
+      if (subject === "Mockingbird") {
+        return author === "Harper Lee";
       }
 
       return false;
@@ -509,7 +509,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    const name = 'Capt. Janeway';
+    const name = "Capt. Janeway";
 
     // bad - template literals should contain interpolation or newlines
     const name = `Capt. Janeway`;
@@ -525,18 +525,18 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    const errorMessage = 'This is a super long error that was thrown because \
+    const errorMessage = "This is a super long error that was thrown because \
     of Batman. When you stop to think about how Batman had anything to do \
     with this, you would get nowhere \
-    fast.';
+    fast.";
 
     // bad
-    const errorMessage = 'This is a super long error that was thrown because ' +
-      'of Batman. When you stop to think about how Batman had anything to do ' +
-      'with this, you would get nowhere fast.';
+    const errorMessage = "This is a super long error that was thrown because " +
+      "of Batman. When you stop to think about how Batman had anything to do " +
+      "with this, you would get nowhere fast.";
 
     // good
-    const errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
+    const errorMessage = "This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.";
     ```
 
   <a name="es6-template-literals"></a><a name="6.4"></a>
@@ -547,12 +547,12 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     // bad
     function sayHi(name) {
-      return 'How are you, ' + name + '?';
+      return "How are you, " + name + "?";
     }
 
     // bad
     function sayHi(name) {
-      return ['How are you, ', name, '?'].join();
+      return ["How are you, ", name, "?"].join();
     }
 
     // bad
@@ -576,10 +576,10 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    const foo = '\'this\' \i\s \"quoted\"';
+    const foo = "\'this\' \i\s \"quoted\"";
 
     // good
-    const foo = '\'this\' is "quoted"';
+    const foo = "'this' is \"quoted\"";
     const foo = `'this' is "quoted"`;
     ```
 
@@ -615,7 +615,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     // immediately-invoked function expression (IIFE)
     (function () {
-      console.log('Welcome to the Internet. Please follow me.');
+      console.log("Welcome to the Internet. Please follow me.");
     }());
     ```
 
@@ -629,7 +629,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     // bad
     if (currentUser) {
       function test() {
-        console.log('Nope.');
+        console.log("Nope.");
       }
     }
 
@@ -637,7 +637,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     let test;
     if (currentUser) {
       test = () => {
-        console.log('Yup.');
+        console.log("Yup.");
       };
     }
     ```
@@ -666,12 +666,12 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     // bad
     function concatenateAll() {
       const args = Array.prototype.slice.call(arguments);
-      return args.join('');
+      return args.join("");
     }
 
     // good
     function concatenateAll(...args) {
-      return args.join('');
+      return args.join("");
     }
     ```
 
@@ -741,10 +741,10 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    var add = new Function('a', 'b', 'return a + b');
+    var add = new Function("a", "b", "return a + b");
 
     // still bad
-    var subtract = Function('a', 'b', 'return a - b');
+    var subtract = Function("a", "b", "return a - b");
     ```
 
   <a name="functions--signature-spacing"></a><a name="7.11"></a>
@@ -776,7 +776,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     // good
     function f2(obj) {
-      const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
+      const key = Object.prototype.hasOwnProperty.call(obj, "key") ? obj.key : 1;
     };
     ```
 
@@ -917,14 +917,14 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```js
     // bad
-    ['get', 'post', 'put'].map(httpMethod => Object.prototype.hasOwnProperty.call(
+    ["get", "post", "put"].map(httpMethod => Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
         httpMethod
       )
     );
 
     // good
-    ['get', 'post', 'put'].map(httpMethod => (
+    ["get", "post", "put"].map(httpMethod => (
       Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
         httpMethod
@@ -1024,7 +1024,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    const inherits = require('inherits');
+    const inherits = require("inherits");
     function PeekableQueue(contents) {
       Queue.apply(this, contents);
     }
@@ -1085,7 +1085,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     class Jedi {
       constructor(options = {}) {
-        this.name = options.name || 'no name';
+        this.name = options.name || "no name";
       }
 
       getName() {
@@ -1122,7 +1122,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     class Rey extends Jedi {
       constructor(...args) {
         super(...args);
-        this.name = 'Rey';
+        this.name = "Rey";
       }
     }
     ```
@@ -1284,7 +1284,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     };
 
     // bad
-    const isJedi = luke['jedi'];
+    const isJedi = luke["jedi"];
 
     // good
     const isJedi = luke.jedi;
@@ -1303,7 +1303,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
       return luke[prop];
     }
 
-    const isJedi = getProp('jedi');
+    const isJedi = getProp("jedi");
     ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -1331,18 +1331,18 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     // bad
     const items = getItems(),
         goSportsTeam = true,
-        dragonball = 'z';
+        dragonball = "z";
 
     // bad
     // (compare to above, and try to spot the mistake)
     const items = getItems(),
         goSportsTeam = true;
-        dragonball = 'z';
+        dragonball = "z";
 
     // good
     const items = getItems();
     const goSportsTeam = true;
-    const dragonball = 'z';
+    const dragonball = "z";
     ```
 
   <a name="variables--const-let-group"></a><a name="13.3"></a>
@@ -1381,12 +1381,12 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     function checkName(hasName) {
       const name = getName();
 
-      if (hasName === 'test') {
+      if (hasName === "test") {
         return false;
       }
 
-      if (name === 'test') {
-        this.setName('');
+      if (name === "test") {
+        this.setName("");
         return false;
       }
 
@@ -1395,14 +1395,14 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     // good
     function checkName(hasName) {
-      if (hasName === 'test') {
+      if (hasName === "test") {
         return false;
       }
 
       const name = getName();
 
-      if (name === 'test') {
-        this.setName('');
+      if (name === "test") {
+        this.setName("");
         return false;
       }
 
@@ -1527,7 +1527,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
       anonymous(); // => TypeError anonymous is not a function
 
       var anonymous = function () {
-        console.log('anonymous function expression');
+        console.log("anonymous function expression");
       };
     }
     ```
@@ -1544,7 +1544,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
       superPower(); // => ReferenceError superPower is not defined
 
       var named = function superPower() {
-        console.log('Flying');
+        console.log("Flying");
       };
     }
 
@@ -1556,7 +1556,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
       named(); // => TypeError named is not a function
 
       var named = function named() {
-        console.log('named');
+        console.log("named");
       }
     }
     ```
@@ -1569,7 +1569,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
       superPower(); // => Flying
 
       function superPower() {
-        console.log('Flying');
+        console.log("Flying");
       }
     }
     ```
@@ -1592,7 +1592,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     + **Null** evaluates to **false**
     + **Booleans** evaluate to **the value of the boolean**
     + **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    + **Strings** evaluate to **false** if an empty string `""`, otherwise **true**
 
     ```javascript
     if ([0] && []) {
@@ -1621,7 +1621,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     }
 
     // good
-    if (name !== '') {
+    if (name !== "") {
       // ...stuff...
     }
 
@@ -1697,16 +1697,16 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
       : value1 > value2 ? "baz" : null;
 
     // better
-    const maybeNull = value1 > value2 ? 'baz' : null;
+    const maybeNull = value1 > value2 ? "baz" : null;
 
     const foo = maybe1 > maybe2
-      ? 'bar'
+      ? "bar"
       : maybeNull;
 
     // best
-    const maybeNull = value1 > value2 ? 'baz' : null;
+    const maybeNull = value1 > value2 ? "baz" : null;
 
-    const foo = maybe1 > maybe2 ? 'bar' : maybeNull;
+    const foo = maybe1 > maybe2 ? "bar" : maybeNull;
     ```
 
   <a name="comparison--unneeded-ternary"></a><a name="15.7"></a>
@@ -1827,27 +1827,27 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     // bad
     function getType() {
-      console.log('fetching type...');
-      // set the default type to 'no type'
-      const type = this._type || 'no type';
+      console.log("fetching type...");
+      // set the default type to "no type"
+      const type = this._type || "no type";
 
       return type;
     }
 
     // good
     function getType() {
-      console.log('fetching type...');
+      console.log("fetching type...");
 
-      // set the default type to 'no type'
-      const type = this._type || 'no type';
+      // set the default type to "no type"
+      const type = this._type || "no type";
 
       return type;
     }
 
     // also good
     function getType() {
-      // set the default type to 'no type'
-      const type = this._type || 'no type';
+      // set the default type to "no type"
+      const type = this._type || "no type";
 
       return type;
     }
@@ -1951,24 +1951,24 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     // bad
     function test(){
-      console.log('test');
+      console.log("test");
     }
 
     // good
     function test() {
-      console.log('test');
+      console.log("test");
     }
 
     // bad
-    dog.set('attr',{
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+    dog.set("attr",{
+      age: "1 year",
+      breed: "Bernese Mountain Dog",
     });
 
     // good
-    dog.set('attr', {
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+    dog.set("attr", {
+      age: "1 year",
+      breed: "Bernese Mountain Dog",
     });
     ```
 
@@ -1988,12 +1988,12 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     // bad
     function fight () {
-      console.log ('Swooosh!');
+      console.log ("Swooosh!");
     }
 
     // good
     function fight() {
-      console.log('Swooosh!');
+      console.log("Swooosh!");
     }
     ```
 
@@ -2039,42 +2039,42 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    $('#items').find('.selected').highlight().end().find('.open').updateCount();
+    $("#items").find(".selected").highlight().end().find(".open").updateCount();
 
     // bad
-    $('#items').
-      find('.selected').
+    $("#items").
+      find(".selected").
         highlight().
         end().
-      find('.open').
+      find(".open").
         updateCount();
 
     // good
-    $('#items')
-      .find('.selected')
+    $("#items")
+      .find(".selected")
         .highlight()
         .end()
-      .find('.open')
+      .find(".open")
         .updateCount();
 
     // bad
-    const leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
-        .attr('width', (radius + margin) * 2).append('svg:g')
-        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+    const leds = stage.selectAll(".led").data(data).enter().append("svg:svg").classed("led", true)
+        .attr("width", (radius + margin) * 2).append("svg:g")
+        .attr("transform", 'translate(' + (radius + margin) + "," + (radius + margin) + ')')
         .call(tron.led);
 
     // good
-    const leds = stage.selectAll('.led')
+    const leds = stage.selectAll(".led")
         .data(data)
-      .enter().append('svg:svg')
-        .classed('led', true)
-        .attr('width', (radius + margin) * 2)
-      .append('svg:g')
-        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+      .enter().append("svg:svg")
+        .classed("led", true)
+        .attr("width", (radius + margin) * 2)
+      .append("svg:g")
+        .attr("transform", "translate(" + (radius + margin) + "," + (radius + margin) + ")")
         .call(tron.led);
 
     // good
-    const leds = stage.selectAll('.led').data(data);
+    const leds = stage.selectAll(".led").data(data);
     ```
 
   <a name="whitespace--after-blocks"></a><a name="18.7"></a>
@@ -2211,10 +2211,10 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    const foo = {clark: 'kent'};
+    const foo = {clark: "kent"};
 
     // good
-    const foo = { clark: 'kent' };
+    const foo = { clark: "kent" };
     ```
 
   <a name="whitespace--max-len"></a><a name="18.12"></a>
@@ -2227,7 +2227,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     const foo = jsonData && jsonData.foo && jsonData.foo.bar && jsonData.foo.bar.baz && jsonData.foo.bar.baz.quux && jsonData.foo.bar.baz.quux.xyzzy;
 
     // bad
-    $.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
+    $.ajax({ method: "POST", url: "https://airbnb.com/", data: { name: "John" } }).done(() => console.log("Congratulations!")).fail(() => console.log("You have failed this city."));
 
     // good
     const foo = jsonData
@@ -2239,12 +2239,12 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     // good
     $.ajax({
-      method: 'POST',
-      url: 'https://airbnb.com/',
-      data: { name: 'John' },
+      method: "POST",
+      url: "https://airbnb.com/",
+      data: { name: "John" },
     })
-      .done(() => console.log('Congratulations!'))
-      .fail(() => console.log('You have failed this city.'));
+      .done(() => console.log("Congratulations!"))
+      .fail(() => console.log("You have failed this city."));
     ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -2271,18 +2271,18 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     // bad
     const hero = {
-        firstName: 'Ada'
-      , lastName: 'Lovelace'
+        firstName: "Ada"
+      , lastName: "Lovelace"
       , birthYear: 1815
-      , superPower: 'computers'
+      , superPower: "computers"
     };
 
     // good
     const hero = {
-      firstName: 'Ada',
-      lastName: 'Lovelace',
+      firstName: "Ada",
+      lastName: "Lovelace",
       birthYear: 1815,
-      superPower: 'computers',
+      superPower: "computers",
     };
     ```
 
@@ -2294,39 +2294,39 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     // bad - git diff without trailing comma
     const hero = {
-         firstName: 'Florence',
-    -    lastName: 'Nightingale'
-    +    lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing']
+         firstName: "Florence",
+    -    lastName: "Nightingale"
+    +    lastName: "Nightingale",
+    +    inventorOf: ["coxcomb chart", "modern nursing"]
     };
 
     // good - git diff with trailing comma
     const hero = {
-         firstName: 'Florence',
-         lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing'],
+         firstName: "Florence",
+         lastName: "Nightingale",
+    +    inventorOf: ["coxcomb chart", "modern nursing"],
     };
 
     // bad
     const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully'
+      firstName: "Dana",
+      lastName: "Scully"
     };
 
     const heroes = [
-      'Batman',
-      'Superman'
+      "Batman",
+      "Superman"
     ];
 
     // good
     const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully',
+      firstName: "Dana",
+      lastName: "Scully",
     };
 
     const heroes = [
-      'Batman',
-      'Superman',
+      "Batman",
+      "Superman",
     ];
 
     // bad
@@ -2391,19 +2391,19 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     // bad
     (function () {
-      const name = 'Skywalker'
+      const name = "Skywalker"
       return name
     })()
 
     // good
     (function () {
-      const name = 'Skywalker';
+      const name = "Skywalker";
       return name;
     }());
 
     // good, but legacy (guards against the function becoming an argument when two files with IIFEs are concatenated)
     ;(() => {
-      const name = 'Skywalker';
+      const name = "Skywalker";
       return name;
     }());
     ```
@@ -2425,7 +2425,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     // => this.reviewScore = 9;
 
     // bad
-    const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
+    const totalScore = this.reviewScore + ""; // invokes this.reviewScore.valueOf()
 
     // bad
     const totalScore = this.reviewScore.toString(); // isn't guaranteed to return a string
@@ -2438,7 +2438,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
   - [21.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](http://eslint.org/docs/rules/radix)
 
     ```javascript
-    const inputValue = '4';
+    const inputValue = "4";
 
     // bad
     const val = new Number(inputValue);
@@ -2543,7 +2543,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     }
 
     const bad = new user({
-      name: 'nope',
+      name: "nope",
     });
 
     // good
@@ -2554,7 +2554,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     }
 
     const good = new User({
-      name: 'yup',
+      name: "yup",
     });
     ```
 
@@ -2563,9 +2563,9 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    this.__firstName__ = 'Panda';
-    this.__firstName = 'Panda';
-    this._firstName_ = 'Panda';
+    this.__firstName__ = "Panda";
+    this.__firstName = "Panda";
+    this._firstName_ = "Panda";
 
     // bad
     class App {
@@ -2575,7 +2575,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     }
 
     // good
-    this._firstName = 'Panda';
+    this._firstName = "Panda";
 
     // good
         class App {
@@ -2631,21 +2631,21 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     // in some other file
     // bad
-    import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
-    import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
-    import InsideDirectory from './InsideDirectory'; // PascalCase import/filename, camelCase export
+    import CheckBox from "./checkBox"; // PascalCase import/export, camelCase filename
+    import FortyTwo from "./FortyTwo"; // PascalCase import/filename, camelCase export
+    import InsideDirectory from "./InsideDirectory"; // PascalCase import/filename, camelCase export
 
     // bad
-    import CheckBox from './check_box'; // PascalCase import/export, snake_case filename
-    import forty_two from './forty_two'; // snake_case import/filename, camelCase export
-    import inside_directory from './inside_directory'; // snake_case import, camelCase export
-    import index from './inside_directory/index'; // requiring the index file explicitly
-    import insideDirectory from './insideDirectory/index'; // requiring the index file explicitly
+    import CheckBox from "./check_box"; // PascalCase import/export, snake_case filename
+    import forty_two from "./forty_two"; // snake_case import/filename, camelCase export
+    import inside_directory from "./inside_directory"; // snake_case import, camelCase export
+    import index from "./inside_directory/index"; // requiring the index file explicitly
+    import insideDirectory from "./insideDirectory/index"; // requiring the index file explicitly
 
     // good
-    import CheckBox from './CheckBox'; // PascalCase export/import/filename
-    import fortyTwo from './fortyTwo'; // camelCase export/import/filename
-    import insideDirectory from './insideDirectory'; // camelCase export/import/directory name/implicit "index"
+    import CheckBox from "./CheckBox"; // PascalCase export/import/filename
+    import fortyTwo from "./fortyTwo"; // camelCase export/import/filename
+    import insideDirectory from "./insideDirectory"; // camelCase export/import/directory name/implicit "index"
     // ^ supports both insideDirectory.js and insideDirectory/index.js
     ```
 
@@ -2681,7 +2681,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
   - [23.1](#accessors--not-required) Accessor functions for properties are not required.
 
   <a name="accessors--no-getters-setters"></a><a name="23.2"></a>
-  - [23.2](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal('hello').
+  - [23.2](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use getVal() and setVal("hello").
 
     ```javascript
     // bad
@@ -2728,8 +2728,8 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     class Jedi {
       constructor(options = {}) {
-        const lightsaber = options.lightsaber || 'blue';
-        this.set('lightsaber', lightsaber);
+        const lightsaber = options.lightsaber || "blue";
+        this.set("lightsaber", lightsaber);
       }
 
       set(key, val) {
@@ -2752,11 +2752,11 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    $(this).trigger('listingUpdated', listing.id);
+    $(this).trigger("listingUpdated", listing.id);
 
     ...
 
-    $(this).on('listingUpdated', (e, listingId) => {
+    $(this).on("listingUpdated", (e, listingId) => {
       // do something with listingId
     });
     ```
@@ -2765,11 +2765,11 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // good
-    $(this).trigger('listingUpdated', { listingId: listing.id });
+    $(this).trigger("listingUpdated", { listingId: listing.id });
 
     ...
 
-    $(this).on('listingUpdated', (e, data) => {
+    $(this).on("listingUpdated", (e, data) => {
       // do something with data.listingId
     });
     ```
@@ -2783,13 +2783,13 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    const sidebar = $('.sidebar');
+    const sidebar = $(".sidebar");
 
     // good
-    const $sidebar = $('.sidebar');
+    const $sidebar = $(".sidebar");
 
     // good
-    const $sidebarBtn = $('.sidebar-btn');
+    const $sidebarBtn = $(".sidebar-btn");
     ```
 
   <a name="jquery--cache"></a><a name="25.2"></a>
@@ -2798,49 +2798,49 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
     ```javascript
     // bad
     function setSidebar() {
-      $('.sidebar').hide();
+      $(".sidebar").hide();
 
       // ...stuff...
 
-      $('.sidebar').css({
-        'background-color': 'pink'
+      $(".sidebar").css({
+        "background-color": "pink"
       });
     }
 
     // good
     function setSidebar() {
-      const $sidebar = $('.sidebar');
+      const $sidebar = $(".sidebar");
       $sidebar.hide();
 
       // ...stuff...
 
       $sidebar.css({
-        'background-color': 'pink'
+        "background-color": "pink"
       });
     }
     ```
 
   <a name="jquery--queries"></a><a name="25.3"></a>
-  - [25.3](#jquery--queries) For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - [25.3](#jquery--queries) For DOM queries use Cascading `$(".sidebar ul")` or parent > child `$(".sidebar > ul")`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 
   <a name="jquery--find"></a><a name="25.4"></a>
   - [25.4](#jquery--find) Use `find` with scoped jQuery object queries.
 
     ```javascript
     // bad
-    $('ul', '.sidebar').hide();
+    $("ul", ".sidebar").hide();
 
     // bad
-    $('.sidebar').find('ul').hide();
+    $(".sidebar").find("ul").hide();
 
     // good
-    $('.sidebar ul').hide();
+    $(".sidebar ul").hide();
 
     // good
-    $('.sidebar > ul').hide();
+    $(".sidebar > ul").hide();
 
     // good
-    $sidebar.find('ul').hide();
+    $sidebar.find("ul").hide();
     ```
 
 **[⬆ back to top](#table-of-contents)**
