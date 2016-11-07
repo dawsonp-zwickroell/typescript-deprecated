@@ -7,6 +7,7 @@ The original style guide can be found [here](https://github.com/airbnb/javascrip
 We refer to this version: https://github.com/airbnb/javascript/blob/788208295469e19b806c06e01095dc8ba1b6cdc9/README.md
 
 ## Adapted/extended rules compared to Airbnb original
+[6.1](#strings--quotes)
 [18.1](#whitespace--spaces)
 [22.2](#naming--camelCase)
 [22.4](#naming--leading-underscore)
@@ -504,17 +505,17 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 ## Strings
 
   <a name="strings--quotes"></a><a name="6.1"></a>
-  - [6.1](#strings--quotes) Use single quotes `''` for strings. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
+  - [6.1](#strings--quotes) **ZE-ADAPTED** Use double quotes `""` for strings. eslint: [`quotes`](http://eslint.org/docs/rules/quotes.html) jscs: [`validateQuoteMarks`](http://jscs.info/rule/validateQuoteMarks)
 
     ```javascript
     // bad
-    const name = "Capt. Janeway";
+    const name = 'Capt. Janeway';
 
     // bad - template literals should contain interpolation or newlines
     const name = `Capt. Janeway`;
 
     // good
-    const name = 'Capt. Janeway';
+    const name = "Capt. Janeway";
     ```
 
   <a name="strings--line-length"></a><a name="6.2"></a>
