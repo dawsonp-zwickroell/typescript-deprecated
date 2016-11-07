@@ -15,7 +15,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 **NOTE** All examples match the airbnb style guide concerning the indentation and are not adapted to our change!
 
 ## Deactivated rules
-[5.1](##destructuring--object)
+[5.1](#destructuring--object)
 [5.2](#destructuring--array)
 [5.3](#destructuring--object-over-array)
 
