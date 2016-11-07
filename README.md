@@ -509,7 +509,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 
     ```javascript
     // bad
-    const name = "Capt. Janeway";
+    const name = 'Capt. Janeway';
 
     // bad - template literals should contain interpolation or newlines
     const name = `Capt. Janeway`;
