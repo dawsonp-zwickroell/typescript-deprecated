@@ -3103,6 +3103,15 @@ Alternately, if you’re creating storage or handling for consistent but unknown
 
   - [Draft ECMA 2015 (ES6) Spec](https://people.mozilla.org/~jorendorff/es6-draft.html)
 
+**Typescript**
+
+  - [Typescript docs](https://www.typescriptlang.org/docs/home.html)
+  - [TSLint core rules](https://palantir.github.io/tslint/rules/)
+
+**Angular**
+
+  - [Angular Styleguide](https://github.com/angular/angular/blob/0ef1f7ef0d9790dc02f09999482625415dac61cd/aio/content/guide/styleguide.md)
+
 **[⬆ back to top](#table-of-contents)**
 
 
