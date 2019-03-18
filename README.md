@@ -11,7 +11,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 * [7.1](#functions--declarations) Added more info.
 * [18.1](#whitespace--spaces) We use 4 spaces instead of 2.
 * [22.2](#naming--camelCase) Extended example.
-* [22.4](#naming--leading-underscore) Use 1 leading underscore for private members and methods
+* [22.4](#naming--leading-underscore) Added typescript explanation and examples.
 
 **NOTE** All examples match the airbnb style guide concerning the indentation and are not adapted to our change!
 
@@ -2674,30 +2674,32 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
     ```
 
   <a name="naming--leading-underscore"></a><a name="22.4"></a>
-  - [22.4](#naming--leading-underscore) **ZE-ADAPTED** Use 1 leading underscore for private members and methods.
+  - [22.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html) jscs: [`disallowDanglingUnderscores`](http://jscs.info/rule/disallowDanglingUnderscores)
 
-    ```javascript
-    // bad
-    this.__firstName__ = "Panda";
-    this.__firstName = "Panda";
-    this._firstName_ = "Panda";
+    **ZE-ADAPTED**
 
+    > Why? TypeScript allows to use visibility modifiers "public", "protected" and "private" to specify visibility. The typescript compiler checks access according to these modifiers.
+
+    ```typescript
     // bad
     class App {
-      __myPrivate__() {
-        // ..
-      }
+        this.__firstName__;
+        this.__firstName;
+        this._firstName_;
+
+        __myPrivate__() {
+          // ..
+        }
     }
 
     // good
-    this._firstName = "Panda";
+    class App {
+        private firstName;
 
-    // good
-        class App {
-          _myPrivate() {
-            // ..
-          }
+        private myPrivate() {
+        // ..
         }
+    }
     ```
 
   <a name="naming--self-this"></a><a name="22.5"></a>
