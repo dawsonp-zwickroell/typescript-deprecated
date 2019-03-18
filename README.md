@@ -1,6 +1,6 @@
-# ZE adapted Airbnb JavaScript Style Guide() {
+# ZE Typescript styleguide based on Airbnb JavaScript Style Guide() {
 
-*A mostly reasonable approach to JavaScript*
+*A mostly reasonable approach to TypeScript*
 
 ## Original style guide
 The original style guide can be found [here](https://github.com/airbnb/javascript)
