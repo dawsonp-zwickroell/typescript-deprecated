@@ -58,7 +58,7 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
   1. [Testing](#testing)
-  1. [ZE Custom Rules] (#ze-custom-rules)
+  1. [ZE Custom Rules](#ze-custom-rules)
   1. [Performance](#performance)
   1. [Resources](#resources)
   1. [In the Wild](#in-the-wild)
