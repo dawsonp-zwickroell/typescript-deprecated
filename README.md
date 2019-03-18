@@ -18,6 +18,15 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 ## Deactivated rules
 Currently no rules are deactivaed.
 
+## Additional rules
+
+
+### Angular projects
+In addition to the rules here the following styleguide also applies:
+https://github.com/angular/angular/blob/0ef1f7ef0d9790dc02f09999482625415dac61cd/aio/content/guide/styleguide.md
+
+In cases where this styleguide **conflicts** with the angular styleguide **use the angular styleguide**.
+
 
 ## Table of Contents
 
