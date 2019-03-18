@@ -2,6 +2,12 @@
 
 *A mostly reasonable approach to TypeScript*
 
+Side note for the code examples: all code examples that originate from the javascript styleguide are not modified for
+typescript. This is mostly notable because no data types are used.
+
+> Why? It is easier to see the difference between this styleguide and the original javascript styleguide.
+
+
 ## Original style guide
 The original style guide can be found [here](https://github.com/airbnb/javascript)
 We refer to this version: https://github.com/airbnb/javascript/blob/788208295469e19b806c06e01095dc8ba1b6cdc9/README.md
