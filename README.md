@@ -2987,8 +2987,108 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
       }
       ```
 
-**[⬆ back to top](#table-of-contents)**
+  <a name="any-type"></a><a name="29.5"></a>
+  - [29.5](#any-type) Avoid type "any".
 
+    > Why? Using any as a type declaration nullifies the compile-time benefits of the type system.
+If you’re dealing with data of unknown or “any” types, you shouldn’t be accessing members of it. Either add type annotations for properties that may exist or change the data type to the empty object type {}.
+Alternately, if you’re creating storage or handling for consistent but unknown types, such as in data structures or serialization, use <T> template types for generic type handling. tslint: [no-any](https://palantir.github.io/tslint/rules/no-any/)
+
+    ```typescript
+    // bad
+    private requestService;
+    private requestService: any;
+
+    // good
+    private requestService: RequestService;
+    ```
+
+  <a name="one-file-per-class"></a><a name="29.6"></a>
+  - [29.6](#one-file-per-class) Use one file for one class or interface. Name the file like the class but use lower camelCase for the file.
+
+    > Why? Putting several classes or interfaces into a single file makes it harder to navigate and find those entities.
+
+    ```typescript
+    // bad
+    // services.ts
+    class RequestService{
+    }
+    class AuthService {
+    }
+
+    // good
+    // requestService.ts
+    class RequestService{
+    }
+
+    // authService.ts
+    class AuthService {
+    }
+    ```
+
+  <a name="enum-types"></a><a name="29.7"></a>
+  - [29.7](#enum-types) Enums types are written with upper camelcase. Enum values are written in lower camelcase.
+
+    > Why? Because its easier to transition for javascript developers that created similar enum like objects with attributes written in lower camelcase.
+
+    ```typescript
+    // bad
+    enum operationState {
+        Ready = 1,
+        WAITING = 2,
+        startingtoshutdown = 3,
+    }
+
+    // good
+    enum OperationState {
+        ready = 1,
+        waiting = 2,
+        startingToShutdown = 3,
+    }
+    ```
+
+  <a name="lines-between-class-members"></a><a name="29.8"></a>
+  - [29.8](#lines-between-class-members) Enforces an empy line between all the methods of a class. tslint: [tslint-lines-between-class-members](https://www.npmjs.com/package/tslint-lines-between-class-members)
+
+    ```typescript
+    // bad
+    class Foo {
+      name: string;
+      lastName: string;
+      constructor(name: string, lastName: string) {
+        this.name = name;
+        this.lastName = lastName;
+      }
+      myMethod1(): void {
+      }
+      myMethod2(): void {
+      }
+      myMethod3(): void {
+      }
+    }
+
+    // good
+    class Foo {
+      name: string;
+      lastName: string;
+
+      constructor(name: string, lastName: string) {
+        this.name = name;
+        this.lastName = lastName;
+      }
+
+      myMethod1(): void {
+      }
+
+      myMethod2(): void {
+      }
+
+      myMethod3(): void {
+      }
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
 
 
 ## Resources
