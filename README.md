@@ -15,6 +15,7 @@ We refer to this version: https://github.com/airbnb/javascript/blob/788208295469
 ## Adapted/extended rules compared to Airbnb original
 * [6.1](#strings--quotes) Double quotes instead of single quotes.
 * [7.1](#functions--declarations) Added more info.
+* [7.11](#functions--signature-spacing) Adapted spacing with functions to match prettier.
 * [18.1](#whitespace--spaces) We use 4 spaces instead of 2.
 * [22.2](#naming--camelCase) Extended example.
 * [22.4](#naming--leading-underscore) Added typescript explanation and examples.
@@ -752,18 +753,17 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
     ```
 
   <a name="functions--signature-spacing"></a><a name="7.11"></a>
-  - [7.11](#functions--signature-spacing) Spacing in a function signature. eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
+  - [7.11](#functions--signature-spacing) **ZE-ADAPTED** Spacing in a function signature when using a function name. No space for anonymous functions. eslint: [`space-before-function-paren`](http://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks)
 
-    > Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
+    > Why? Because it matches with prettier style.
 
     ```javascript
     // bad
-    const f = function(){};
+    const f = function () {};
     const g = function (){};
-    const h = function() {};
 
     // good
-    const x = function () {};
+    const x = function() {};
     const y = function a() {};
     ```
 
