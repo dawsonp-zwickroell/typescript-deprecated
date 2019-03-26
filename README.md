@@ -61,14 +61,9 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Events](#events)
-  1. [jQuery](#jquery)
-  1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
-  1. [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
-  1. [Testing](#testing)
   1. [ZE Custom Rules](#ze-custom-rules)
-  1. [Performance](#performance)
+  1. [Interfaces](#interfaces)
   1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
   1. [Contributors](#contributors)
   1. [License](#license)
 
@@ -2900,9 +2895,9 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
   **[⬆ back to top](#table-of-contents)**
 
 
-## ZE custom rules
-  <a name="custom-curly-brackets"></a><a name="29.1"></a>
-  - [29.1](#custom-curly-brackets) Always start your curly braces on the same line as whatever they're opening.
+## ZE custom rules - General
+  <a name="custom-curly-brackets"></a><a name="25.1"></a>
+  - [25.1](#custom-curly-brackets) Always start your curly braces on the same line as whatever they're opening.
 
     > Why? Because of implicit semicolon insertion and unexpected behaviour otherwise.
 
@@ -2919,8 +2914,8 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
     }
     ```
 
-  <a name="custom-strict-mode"></a><a name="29.2"></a>
-  - [29.2](#custom-strict-mode) Always use strict mode.
+  <a name="custom-strict-mode"></a><a name="25.2"></a>
+  - [25.2](#custom-strict-mode) Always use strict mode.
 
     > Why? This eliminates some silent javascript error by changing them to throw errors and it allows better runtime optimization.
     For more info read this [article](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Strict_mode).
@@ -2930,13 +2925,18 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
     "use strict";
     ```
 
-  <a name="custom-function-length"></a><a name="29.3"></a>
-  - [29.3](#custom-function-length) Avoid function length > 50.
+  <a name="custom-function-length"></a><a name="25.3"></a>
+  - [25.3](#custom-function-length) Avoid function length > 50.
 
     > Why? Most of the time you can extract the functionality into a separate function to achieve separation of concerns.
 
-  <a name="custom-return-count"></a><a name="29.4"></a>
-  - [29.4](#custom-return-count) Avoid having more than one return statement in one function. The only exception is to use
+  <a name="custom-file-length"></a><a name="25.4"></a>
+  - [25.4](#custom-file-length) Avoid file length > 300.
+
+  > Why? Most of the time if your file gets bigger you are offending the single responsiblity law.
+
+  <a name="custom-return-count"></a><a name="25.5"></a>
+  - [25.5](#custom-return-count) Avoid having more than one return statement in one function. The only exception is to use
     return statements in the argument checking process.
 
     > Why? This is often a source of errors when you have allocated resources in a function and forget to release them before you return in various places.
@@ -2993,12 +2993,12 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
       }
       ```
 
-  <a name="any-type"></a><a name="29.5"></a>
-  - [29.5](#any-type) Avoid type "any".
+  <a name="any-type"></a><a name="25.6"></a>
+  - [25.6](#any-type) Avoid type "any".
 
     > Why? Using any as a type declaration nullifies the compile-time benefits of the type system.
 If you’re dealing with data of unknown or “any” types, you shouldn’t be accessing members of it. Either add type annotations for properties that may exist or change the data type to the empty object type {}.
-Alternately, if you’re creating storage or handling for consistent but unknown types, such as in data structures or serialization, use <T> template types for generic type handling. tslint: [no-any](https://palantir.github.io/tslint/rules/no-any/)
+Alternately, if you’re creating storage or handling for consistent but unknown types, such as in data structures or serialization, use <T> template types for generic type handling. tslint: [no-any](https://palantir.github.io/tslint/rules/no-any/), [no-unsafe-any](https://palantir.github.io/tslint/rules/no-unsafe-any/)
 
     ```typescript
     // bad
@@ -3009,8 +3009,8 @@ Alternately, if you’re creating storage or handling for consistent but unknown
     private requestService: RequestService;
     ```
 
-  <a name="one-file-per-class"></a><a name="29.6"></a>
-  - [29.6](#one-file-per-class) Use one file for one class or interface. Name the file like the class but use lower camelCase for the file.
+  <a name="one-file-per-class"></a><a name="25.7"></a>
+  - [25.7](#one-file-per-class) Use one file for one class or interface. Name the file like the class but use lower camelCase for the file.
 
     > Why? Putting several classes or interfaces into a single file makes it harder to navigate and find those entities.
 
@@ -3032,8 +3032,8 @@ Alternately, if you’re creating storage or handling for consistent but unknown
     }
     ```
 
-  <a name="enum-types"></a><a name="29.7"></a>
-  - [29.7](#enum-types) Enums types are written with upper camelcase. Enum values are written in lower camelcase.
+  <a name="enum-types"></a><a name="25.8"></a>
+  - [25.8](#enum-types) Enums types are written with upper camelcase. Enum values are written in lower camelcase.
 
     > Why? Because its easier to transition for javascript developers that created similar enum like objects with attributes written in lower camelcase.
 
@@ -3053,8 +3053,8 @@ Alternately, if you’re creating storage or handling for consistent but unknown
     }
     ```
 
-  <a name="lines-between-class-members"></a><a name="29.8"></a>
-  - [29.8](#lines-between-class-members) Enforces an empy line between all the methods of a class. tslint: [tslint-lines-between-class-members](https://www.npmjs.com/package/tslint-lines-between-class-members)
+  <a name="lines-between-class-members"></a><a name="25.9"></a>
+  - [25.9](#lines-between-class-members) Enforces an empy line between all the methods of a class. tslint: [tslint-lines-between-class-members](https://www.npmjs.com/package/tslint-lines-between-class-members)
 
     ```typescript
     // bad
@@ -3093,6 +3093,57 @@ Alternately, if you’re creating storage or handling for consistent but unknown
       }
     }
     ```
+
+<a name="explicit-visibility"></a><a name="25.10"></a>
+
+- [25.10](#explicit-visibility) Write visibility modifier explicitly on each member and method.
+
+  > Why? Because this forces you to think about the visibility of that member or method and it is not public by accident.
+
+  ```typescript
+  // bad
+  class Foo {
+    name: string;
+    lastName: string;
+
+    constructor(name: string, lastName: string) {
+      this.name = name;
+      this.lastName = lastName;
+    }
+
+    myMethod1(): void {}
+  }
+
+  // good
+  class Foo {
+    private name: string;
+    private lastName: string;
+
+    constructor(name: string, lastName: string) {
+      this.name = name;
+      this.lastName = lastName;
+    }
+
+    public myMethod1(): void {}
+  }
+  ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## ZE Custom Rules - Interfaces
+  <a name="interface-names"></a><a name="26.1"></a>
+
+  - [26.1](#interface-names) Prefix interface names with capital I e.g. IMyInterface
+
+  > Why? Because its easier to distinguish betweet classes and interfaces.
+
+  ```javascript
+  // bad
+  interface MyInterface {}
+
+  // good
+  interface IMyInterface {}
+  ```
 
 **[⬆ back to top](#table-of-contents)**
 
