@@ -61,7 +61,8 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Events](#events)
-  1. [ZE Custom Rules](#ze-custom-rules)
+  1. [ZE_Custom_Rules_General](#ZE_Custom_Rules_General)
+  1. [ZE_Custom_Rules_Interfaces](#ZE_Custom_Rules_Interfaces)
   1. [Interfaces](#interfaces)
   1. [Resources](#resources)
   1. [Contributors](#contributors)
@@ -2895,7 +2896,8 @@ In cases where this styleguide **conflicts** with the angular styleguide **use t
   **[⬆ back to top](#table-of-contents)**
 
 
-## ZE custom rules - General
+## ZE_Custom_Rules_General
+
   <a name="custom-curly-brackets"></a><a name="25.1"></a>
   - [25.1](#custom-curly-brackets) Always start your curly braces on the same line as whatever they're opening.
 
@@ -3130,7 +3132,8 @@ Alternately, if you’re creating storage or handling for consistent but unknown
 
 **[⬆ back to top](#table-of-contents)**
 
-## ZE Custom Rules - Interfaces
+## ZE_Custom_Rules_Interfaces
+
   <a name="interface-names"></a><a name="26.1"></a>
 
   - [26.1](#interface-names) Prefix interface names with capital I e.g. IMyInterface
