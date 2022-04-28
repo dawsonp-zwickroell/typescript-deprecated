@@ -1,4 +1,4 @@
-# ZE Typescript styleguide based on Airbnb JavaScript Style Guide() {
+# ZE Typescript styleguide based on Airbnb JavaScript Style Guide()
 
 *A mostly reasonable approach to TypeScript*
 
@@ -11,6 +11,12 @@ typescript. This is mostly notable because no data types are used.
 ## Original style guide
 The original style guide can be found [here](https://github.com/airbnb/javascript)
 We refer to this version: https://github.com/airbnb/javascript/blob/788208295469e19b806c06e01095dc8ba1b6cdc9/README.md
+
+## Changelog
+
+| Date       | What changed? |
+| :-         | :-            |
+| 2022-04-28 | [25.7 One-file-per-class](#one-file-per-class) marked as deprecated |
 
 ## Adapted/extended rules compared to Airbnb original
 * [6.1](#strings--quotes) Double quotes instead of single quotes.
@@ -3013,8 +3019,10 @@ Alternately, if you’re creating storage or handling for consistent but unknown
 
   <a name="one-file-per-class"></a><a name="25.7"></a>
   - [25.7](#one-file-per-class) Use one file for one class or interface. Name the file like the class but use lower camelCase for the file.
+  
+  **DEPRECATED:** IDE should aid in finding classes or interfaces independent of the location. Additionally it prevents import-statements for each and every interface/class file. One-file-per-class does not seem to reflect the standard, e.g. the file [types.ts of typescript repo](https://github.com/microsoft/TypeScript/blob/main/src/compiler/types.ts) comprises multiple interfaces in one file.
 
-    > Why? Putting several classes or interfaces into a single file makes it harder to navigate and find those entities.
+> Why? Putting several classes or interfaces into a single file makes it harder to navigate and find those entities.
 
     ```typescript
     // bad
